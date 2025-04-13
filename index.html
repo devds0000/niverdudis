@@ -14,7 +14,30 @@
       justify-content: center;
       min-height: 100vh;
       overflow: auto;
-      position: relative;
+      background-color: #000;
+    }
+
+    #start-btn {
+      position: absolute;
+      z-index: 10;
+      padding: 20px 40px;
+      font-size: 1.2em;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #start-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    #content {
+      display: none;
+      width: 100%;
+      height: 100%;
     }
 
     #bg-video {
@@ -38,6 +61,7 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
       backdrop-filter: blur(8px);
       animation: fadeIn 1s ease-in-out;
+      margin: 0 auto;
     }
 
     h1 {
@@ -93,31 +117,37 @@
 </head>
 <body>
 
-  <!-- Vídeo de fundo -->
-  <video autoplay loop id="bg-video">
-    <source src="https://cdn.discordapp.com/attachments/1349108650547089459/1360947053227671582/1744545460796.mp4?ex=67fcf836&is=67fba6b6&hm=95b9d3265df26486a14be05b75155da09e55b43db3cc77a7356f06b35debdc57&" type="video/mp4">
-    Seu navegador não suporta vídeos HTML5.
-  </video>
+  <!-- Botão de Início -->
+  <button id="start-btn">Clique para começar</button>
 
-  <div class="card">
-    <h1>🥳 Duda, Feliz Aniversário! 🥳</h1>
+  <!-- Conteúdo escondido inicialmente -->
+  <div id="content">
+    <!-- Vídeo de fundo -->
+    <video autoplay loop id="bg-video">
+      <source src="https://cdn.discordapp.com/attachments/1349108650547089459/1360947053227671582/1744545460796.mp4?ex=67fcf836&is=67fba6b6&hm=95b9d3265df26486a14be05b75155da09e55b43db3cc77a7356f06b35debdc57&" type="video/mp4">
+      Seu navegador não suporta vídeos HTML5.
+    </video>
 
-    <div class="mensagem" id="mensagem">
-      Parece que foi ontem que nos conhecemos no Discord, e olha só onde estamos hoje. Você se tornou uma das pessoas mais especiais da minha vida.@@
-      Às vezes você me irrita, tem seus surtos (e quem não tem, né?), mas a verdade é que sempre conseguimos superar tudo. Nossa amizade é daquelas que não se quebra, mesmo nos momentos difíceis. A gente sempre volta a se falar, porque somos unidos, não importa o que aconteça.@@
-      Te considero como uma irmã, e tenho muito orgulho de ver sua jornada. Cada vez mais você está superando desafios, conquistando o que deseja e se tornando uma pessoa ainda mais incrível. Eu realmente não poderia pedir uma amizade melhor. Você é uma das melhores pessoas que já tive o prazer de conhecer.@@
-      Que seu caminho seja sempre iluminado, que você continue voando alto e alcançando seus objetivos. E lembre-se, estarei sempre aqui ao seu lado, torcendo por você, apoiando e vibrando a cada conquista!@@
-      Se precisar de algo, já sabe: estarei sempre aqui, nos bons e maus momentos, todos os dias, todas as horas, todos os anos.@@
-      Que Deus te abençoe muito, te encha de luz, saúde e alegrias!@@
-      Te amo demais, minha irmã de amizade. Feliz vida! ❤️
+    <div class="card">
+      <h1>🥳 Duda, Feliz Aniversário! 🥳</h1>
+      <div class="mensagem" id="mensagem">
+        Parece que foi ontem que nos conhecemos no Discord, e olha só onde estamos hoje. Você se tornou uma das pessoas mais especiais da minha vida.@@
+        Às vezes você me irrita, tem seus surtos (e quem não tem, né?), mas a verdade é que sempre conseguimos superar tudo. Nossa amizade é daquelas que não se quebra, mesmo nos momentos difíceis. A gente sempre volta a se falar, porque somos unidos, não importa o que aconteça.@@
+        Te considero como uma irmã, e tenho muito orgulho de ver sua jornada. Cada vez mais você está superando desafios, conquistando o que deseja e se tornando uma pessoa ainda mais incrível. Eu realmente não poderia pedir uma amizade melhor. Você é uma das melhores pessoas que já tive o prazer de conhecer.@@
+        Que seu caminho seja sempre iluminado, que você continue voando alto e alcançando seus objetivos. E lembre-se, estarei sempre aqui ao seu lado, torcendo por você, apoiando e vibrando a cada conquista!@@
+        Se precisar de algo, já sabe: estarei sempre aqui, nos bons e maus momentos, todos os dias, todas as horas, todos os anos.@@
+        Que Deus te abençoe muito, te encha de luz, saúde e alegrias!@@
+        Te amo demais, minha irmã de amizade. Feliz vida! ❤️
+      </div>
+      <a class="link" href="textoCompleto.html">Quando terminar de ler clique aqui</a>
     </div>
-
-
-
-    <a class="link" href="textoCompleto.html">Quando terminar de ler clique aqui</a>
   </div>
 
   <script>
+    const startBtn = document.getElementById('start-btn');
+    const content = document.getElementById('content');
+    const mensagem = document.getElementById('mensagem');
+
     function typeWriter(element) {
       const texto = element.innerHTML.split('@@');
       element.innerHTML = '';
@@ -149,9 +179,12 @@
       escreverTexto();
     }
 
-    const mensagem = document.getElementById('mensagem');
-    setTimeout(() => typeWriter(mensagem), 1000);
+    startBtn.addEventListener('click', () => {
+      startBtn.style.display = 'none';
+      content.style.display = 'block';
+      setTimeout(() => typeWriter(mensagem), 1000);
+    });
   </script>
-
 </body>
-</html>
+  </html>
+  
