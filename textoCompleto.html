@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>dudis</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+      background: url('https://cdn.discordapp.com/attachments/1349108650547089459/1360911026136285374/10037817120368ff1ed3a7c5f2001b04.jpg?ex=67fcd6a9&is=67fb8529&hm=8627e94189e0a214e4ee74ce6d376044077d327f2d37eb51ef06a3e231533d31&') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 700px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0,0,0,0.6);
+      backdrop-filter: blur(12px);
+      overflow-y: auto;
+      max-height: 90vh;
+      animation: slideIn 1s ease-out;
+    }
+
+    .avatar-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .avatar-row img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    .avatar-row div {
+      text-align: center;
+      color: #fff;
+      font-size: 1em;
+      margin-top: 5px;
+    }
+
+    .card img, .card video {
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card img:hover, .card video:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+
+    .assinatura {
+      font-style: italic;
+      margin-top: 30px;
+      font-size: 1.5em;
+      color: #ffcccb;
+      text-shadow: 1px 1px 4px rgba(255,255,255,0.3);
+      animation: fadeIn 2s ease-in-out, textGlow 1.5s infinite alternate;
+    }
+
+    .assinatura strong {
+      font-size: 2em;
+      color: #fff;
+      animation: heartBeat 1.5s infinite;
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(-100vh); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heartBeat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes textGlow {
+      0% { text-shadow: 0 0 10px #ffcccb, 0 0 20px #ffcccb, 0 0 30px #ffcccb; }
+      100% { text-shadow: 0 0 15px #ffcccb, 0 0 30px #ffcccb, 0 0 45px #ffcccb; }
+    }
+
+    @media screen and (max-width: 480px) {
+      .card {
+        padding: 15px;
+      }
+      .assinatura {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="avatar-row">
+      <div>
+        <img id="leoAvatar" alt="Leo">
+        <div>Leo 💘</div>
+      </div>
+      <div>
+        <img id="dudaAvatar" alt="Duda">
+        <div>Duda 💘</div>
+      </div>
+    </div>
+
+    <video controls style="width: 100%; margin-bottom: 20px;">
+      <source src="https://cdn.discordapp.com/attachments/1349108650547089459/1360892748395319387/1744532513912.mp4?ex=67fcc5a3&is=67fb7423&hm=24481b48d4dd66edd6caa923cbfa01c668d68035a713f4ff9a149ae9cb1adc8d&" type="video/mp4">
+    </video>
+    
+    <img src="https://cdn.discordapp.com/attachments/1349108650547089459/1360882954653663242/IMG_20241012_124400_643-1.jpg?ex=67fcbc84&is=67fb6b04&hm=697a644659f173b97ec5cfcfb0cb03e5980bddb33a9eb5ae1a9a90fb1ec760c0&" style="max-width: 100%;">
+    <img src="https://cdn.discordapp.com/attachments/1349108650547089459/1360886495493357618/Screenshot_2025-04-07-15-07-13-565_com.wejoy.weplay.us.jpg?ex=67fcbfd0&is=67fb6e50&hm=8b25f64707c3ac4c80216702c3419c5ad1feab43ea2deaf456424bbbdbcd839f&" style="max-width: 100%;">
+    <img src="https://cdn.discordapp.com/attachments/1349108650547089459/1360889080614879444/0e6e191a826d69941a18149d9f0148f3_1.jpg?ex=67fcc238&is=67fb70b8&hm=7d867e1b534b69e5fbfbfb6bff89f4596681805893ee1736068c5ab791955904&" style="max-width: 100%;">
+  
+    <video controls style="width: 100%; margin-bottom: 20px;">
+      <source src="https://cdn.discordapp.com/attachments/1349108650547089459/1360893735369703444/1744532749053.mp4?ex=67fcc68e&is=67fb750e&hm=ab16ff7eec03b9f7e4b6a9b46cf9c994f7beb7f1e8f0f6712d489ed32cd10265&" type="video/mp4">
+    </video>
+    
+    <div class="assinatura">
+      Com amor,<br><strong>Leo ❤️</strong>   
+
+      <a class="link" href="fim.html">CLIQUE AQUI</a>
+    </div>
+  </div>
+  
+  <script>
+    // Aqui, você só precisa adicionar o link da imagem diretamente no código.
+    document.getElementById('leoAvatar').src = 'https://cdn.discordapp.com/attachments/1349108650547089459/1360908904501874851/0dae2ec56578504dd279faa2412e5fa4.webp?ex=67fcd4af&is=67fb832f&hm=29d61be39cd859564c7d4df744efc5849424d83fd52ab5840687ec23e1f10392&';  // Substitua pelo link real
+    document.getElementById('dudaAvatar').src = 'https://cdn.discordapp.com/attachments/1349108650547089459/1360909045090881679/c06e9eefb8bf540f0d769b5ad1dac83b.webp?ex=67fcd4d0&is=67fb8350&hm=b2f9c41cc3781b9cff77e0ad41f2210cc873911209175607772d2392bb66ac94&';  // Substitua pelo link real
+  </script>
+</body>
+</html>

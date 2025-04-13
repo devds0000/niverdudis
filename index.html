@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parabéns, Duda!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background: url('https://cdn.discordapp.com/attachments/1349108650547089459/1360882954653663242/IMG_20241012_124400_643-1.jpg?ex=67fcbc84&is=67fb6b04&hm=697a644659f173b97ec5cfcfb0cb03e5980bddb33a9eb5ae1a9a90fb1ec760c0&') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      padding: 30px 20px;
+      max-width: 700px;
+      width: 90%;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .mensagem {
+      font-size: 1.1em;
+      line-height: 1.6em;
+      text-align: justify;
+      position: relative;
+    }
+
+    .mensagem::after {
+      content: '|';
+      animation: blink 1s infinite;
+      display: inline-block;
+      margin-left: 5px;
+    }
+
+    .assinatura {
+      margin-top: 30px;
+      font-style: italic;
+    }
+
+    a.link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 1.5em;
+      }
+      .mensagem {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🥳 Duda, Feliz Aniversário! 🥳</h1>
+
+    <div class="mensagem" id="mensagem">
+      Parece que foi ontem que nos conhecemos no Discord, e olha só onde estamos hoje. Você se tornou uma das pessoas mais especiais da minha vida.@@
+      Às vezes você me irrita, tem seus surtos (e quem não tem, né?), mas a verdade é que sempre conseguimos superar tudo. Nossa amizade é daquelas que não se quebra, mesmo nos momentos difíceis. A gente sempre volta a se falar, porque somos unidos, não importa o que aconteça.@@
+      Te considero como uma irmã, e tenho muito orgulho de ver sua jornada. Cada vez mais você está superando desafios, conquistando o que deseja e se tornando uma pessoa ainda mais incrível. Eu realmente não poderia pedir uma amizade melhor. Você é uma das melhores pessoas que já tive o prazer de conhecer.@@
+      Que seu caminho seja sempre iluminado, que você continue voando alto e alcançando seus objetivos. E lembre-se, estarei sempre aqui ao seu lado, torcendo por você, apoiando e vibrando a cada conquista!@@
+      Se precisar de algo, já sabe: estarei sempre aqui, nos bons e maus momentos, todos os dias, todas as horas, todos os anos.@@
+      Que Deus te abençoe muito, te encha de luz, saúde e alegrias!@@
+      Te amo demais, minha irmã de amizade. Feliz vida! ❤️
+    </div>
+
+    <!-- Música de fundo -->
+<audio autoplay loop>
+  <source src="duda.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio HTML5.
+</audio>
+    
+
+    <a class="link" href="textoCompleto.html">Quando terminar de ler clique aqui</a>
+
+    
+
+  <script>
+    function typeWriter(element) {
+      const texto = element.innerHTML.split('@@');
+      element.innerHTML = '';
+      let index = 0;
+
+      function escreverTexto() {
+        if (index < texto.length) {
+          const parte = texto[index];
+          let charIndex = 0;
+
+          function digitarCaractere() {
+            if (charIndex < parte.length) {
+              element.innerHTML += parte.charAt(charIndex);
+              charIndex++;
+              setTimeout(digitarCaractere, 50);
+            } else {
+              index++;
+              if (index < texto.length) {
+                element.innerHTML += "<br><br>";
+                setTimeout(escreverTexto, 1000);
+              }
+            }
+          }
+
+          digitarCaractere();
+        }
+      }
+
+      escreverTexto();
+    }
+
+    const mensagem = document.getElementById('mensagem');
+    setTimeout(() => typeWriter(mensagem), 1000);
+  </script>
+
+</body>
+</html>
