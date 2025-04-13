@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -15,7 +15,6 @@
       height: 100vh;
     }
 
-    /* Definir o vídeo como fundo */
     .background-video {
       position: absolute;
       top: 0;
@@ -23,7 +22,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -1; /* Garantir que o vídeo fique atrás do conteúdo */
+      z-index: -1;
     }
 
     .card {
@@ -38,6 +37,10 @@
       overflow-y: auto;
       max-height: 90vh;
       animation: slideIn 1s ease-out;
+      margin: auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     .avatar-row {
@@ -62,9 +65,14 @@
       margin-top: 5px;
     }
 
+    .assinatura {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
     @keyframes slideIn {
       0% { transform: translateY(-100vh); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-50%); opacity: 1; }
     }
 
     @media screen and (max-width: 480px) {
@@ -75,7 +83,7 @@
   </style>
 </head>
 <body>
-  <!-- Video de fundo -->
+  <!-- Vídeo de fundo -->
   <video class="background-video" autoplay loop>
     <source src="https://cdn.discordapp.com/attachments/1349108650547089459/1360925977995251853/1744540436824.mp4?ex=67fce495&is=67fb9315&hm=b5474b210fe6474d08bf845d3dd2135ca7858d5fad3361b94a52dcbb4d83eeb5&" type="video/mp4">
   </video>
@@ -91,12 +99,16 @@
         <div>Duda</div>
       </div>
     </div>
+
+    <!-- Assinatura -->
+    <div class="assinatura">
+      Com amor,<br><strong>Leo ❤️</strong>
+    </div>
   </div>
 
   <script>
-    // Definindo as URLs das imagens de perfil (substitua pelos links reais)
-    document.getElementById('leoAvatar').src = 'https://cdn.discordapp.com/attachments/1349108650547089459/1360908904501874851/0dae2ec56578504dd279faa2412e5fa4.webp?ex=67fcd4af&is=67fb832f&hm=29d61be39cd859564c7d4df744efc5849424d83fd52ab5840687ec23e1f10392&';  // Substitua pelo link real
-    document.getElementById('dudaAvatar').src = 'https://cdn.discordapp.com/attachments/1349108650547089459/1360909045090881679/c06e9eefb8bf540f0d769b5ad1dac83b.webp?ex=67fcd4d0&is=67fb8350&hm=b2f9c41cc3781b9cff77e0ad41f2210cc873911209175607772d2392bb66ac94&';  // Substitua pelo link real
+    document.getElementById('leoAvatar').src = 'https://cdn.discordapp.com/attachments/1349108650547089459/1360908904501874851/0dae2ec56578504dd279faa2412e5fa4.webp?ex=67fcd4af&is=67fb832f&hm=29d61be39cd859564c7d4df744efc5849424d83fd52ab5840687ec23e1f10392&';
+    document.getElementById('dudaAvatar').src = 'https://cdn.discordapp.com/attachments/1349108650547089459/1360909045090881679/c06e9eefb8bf540f0d769b5ad1dac83b.webp?ex=67fcd4d0&is=67fb8350&hm=b2f9c41cc3781b9cff77e0ad41f2210cc873911209175607772d2392bb66ac94&';
   </script>
 </body>
 </html>
