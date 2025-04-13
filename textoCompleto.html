@@ -70,15 +70,28 @@
       font-style: italic;
       margin-top: 30px;
       font-size: 1.5em;
-      color: #ffcccb;
+      color: #FF0000;
       text-shadow: 1px 1px 4px rgba(255,255,255,0.3);
       animation: fadeIn 2s ease-in-out, textGlow 1.5s infinite alternate;
     }
 
     .assinatura strong {
       font-size: 2em;
-      color: #fff;
+      color: #FF0000;
       animation: heartBeat 1.5s infinite;
+    }
+
+    a {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    a:visited {
+      color: red;
     }
 
     @keyframes slideIn {
@@ -136,18 +149,13 @@
     <video controls style="width: 100%; margin-bottom: 20px;">
       <source src="https://cdn.discordapp.com/attachments/1349108650547089459/1360893735369703444/1744532749053.mp4?ex=67fcc68e&is=67fb750e&hm=ab16ff7eec03b9f7e4b6a9b46cf9c994f7beb7f1e8f0f6712d489ed32cd10265&" type="video/mp4">
     </video>
-    
-    <div class="assinatura">
-      Com amor,<br><strong>Leo ❤️</strong>   
-
-      <a class="link" href="fim.html">CLIQUE AQUI</a>
-    </div>
+       
+    <a class="link" href="fim.html">CLIQUE AQUI</a>
   </div>
-  
+
   <script>
-    // Aqui, você só precisa adicionar o link da imagem diretamente no código.
-    document.getElementById('leoAvatar').src = 'https://cdn.discordapp.com/attachments/1349108650547089459/1360908904501874851/0dae2ec56578504dd279faa2412e5fa4.webp?ex=67fcd4af&is=67fb832f&hm=29d61be39cd859564c7d4df744efc5849424d83fd52ab5840687ec23e1f10392&';  // Substitua pelo link real
-    document.getElementById('dudaAvatar').src = 'https://cdn.discordapp.com/attachments/1349108650547089459/1360909045090881679/c06e9eefb8bf540f0d769b5ad1dac83b.webp?ex=67fcd4d0&is=67fb8350&hm=b2f9c41cc3781b9cff77e0ad41f2210cc873911209175607772d2392bb66ac94&';  // Substitua pelo link real
+    document.getElementById('leoAvatar').src = 'https://cdn.discordapp.com/attachments/1349108650547089459/1360908904501874851/0dae2ec56578504dd279faa2412e5fa4.webp?ex=67fcd4af&is=67fb832f&hm=29d61be39cd859564c7d4df744efc5849424d83fd52ab5840687ec23e1f10392&';
+    document.getElementById('dudaAvatar').src = 'https://cdn.discordapp.com/attachments/1349108650547089459/1360909045090881679/c06e9eefb8bf540f0d769b5ad1dac83b.webp?ex=67fcd4d0&is=67fb8350&hm=b2f9c41cc3781b9cff77e0ad41f2210cc873911209175607772d2392bb66ac94&';
   </script>
 </body>
 </html>
